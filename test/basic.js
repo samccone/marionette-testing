@@ -1,15 +1,15 @@
 chai = require('chai');
 chai.should();
 
-jsdom = require("jsdom").jsdom
-global.document = jsdom("<html></html>")
-global.window = global.document.parentWindow
+jsdom = require("jsdom").jsdom;
+global.document = jsdom("<html></html>");
+global.window = global.document.parentWindow;
 
-jquery = require("jquery")
-_ = require("lodash")
-backbone = require("backbone")
-backbone.$ = jquery
-Mn = require("backbone.marionette")
+jquery = require("jquery");
+_ = require("lodash");
+backbone = require("backbone");
+backbone.$ = jquery;
+Mn = require("backbone.marionette");
 
 describe("rendering", function() {
   beforeEach(function() {
@@ -23,12 +23,11 @@ describe("rendering", function() {
       },
       events: {
         "click": function() {
-            this.model.set('name', 'tomtom')
+            this.model.set('name', 'tomtom');
         }
       }
     }).render();
-
-  })
+  });
 
   it("should render", function() {
     this.rendered.el.innerHTML.should.eql('hi ryan lost his phone');
@@ -44,5 +43,5 @@ describe("rendering", function() {
     this.person.set('name', 'foo');
     this.rendered.el.innerHTML.should.eql('hi foo');
   });
-})
+});
 
