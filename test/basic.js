@@ -4,11 +4,8 @@ chai.should();
 jsdom = require("jsdom").jsdom;
 global.document = jsdom("<html></html>");
 global.window = global.document.parentWindow;
-
-jquery = require("jquery");
 _ = require("lodash");
 backbone = require("backbone");
-backbone.$ = jquery;
 Mn = require("backbone.marionette");
 
 describe("rendering", function() {
